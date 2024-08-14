@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset default margin and padding */
 * {
     margin: 0;
@@ -9,66 +7,98 @@
 
 /* Basic styling for the entire page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    background-color: #121212; /* Dark background for a sleek look */
+    color: #e0e0e0; /* Light text color for contrast */
 }
 
 /* Header styles */
 header {
-    background-color: #222;
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e); /* Futuristic gradient */
     color: #fff;
-    padding: 1rem;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a slight shadow for depth */
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff00; /* Neon green */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow effect */
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #00ffff; /* Neon cyan */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Neon glow effect */
+}
+
+nav ul li a:hover {
+    color: #ff00ff; /* Neon pink on hover */
 }
 
 /* Recipe section styles */
 .recipe-details {
-    background-color: #fff;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e; /* Dark background for a modern look */
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.6); /* Neon cyan glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.recipe-details:hover {
+    box-shadow: 0 6px 25px rgba(0, 255, 255, 0.8); /* Enhanced glow on hover */
 }
 
 .recipe-details h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #ff00ff; /* Neon pink */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon glow effect */
+    margin-bottom: 1rem;
 }
 
 .recipe-details ul {
     list-style: disc;
     margin-left: 1rem;
+    color: #e0e0e0; /* Light color for readability */
 }
 
 .recipe-details li {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Footer styles */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #222;
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e); /* Futuristic gradient */
     color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #00ff00; /* Neon green */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Neon glow effect */
+    transition: color 0.3s ease-in-out;
+}
+
+footer p:hover {
+    color: #00ffff; /* Neon cyan on hover */
 }

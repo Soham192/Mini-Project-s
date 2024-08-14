@@ -1,52 +1,129 @@
-/* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
     margin: 0;
     padding: 0;
+    background-color: #0d0d0d; /* Dark background for high contrast with neon colors */
+    color: #e0e0e0; /* Light text color for readability */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/* Header styles */
 header {
-    background-color: #4caf50;
+    background-color: #111;
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ff00ff; /* Neon pink */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline-block;
     margin-right: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #00ffff; /* Neon cyan */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+
+nav ul li a:hover {
+    color: #ff00ff; /* Neon pink on hover */
 }
 
 .hero {
     background-image: url('../assets/nutri.jpg'); /* Replace with your own image */
     background-size: cover;
+    background-position: center;
     color: #fff;
     text-align: center;
     padding: 100px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 0 20px #00ff00 inset; /* Neon green inner glow */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: -1;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    color: #00ff00; /* Neon green */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    animation: flicker 1.5s infinite alternate; /* Flickering neon effect */
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6600;
+    padding: 15px 30px;
+    background-color: #ff00ff; /* Neon pink */
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: bold;
+    box-shadow: 0 10px 20px rgba(255, 0, 255, 0.6); /* Neon pink glow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00ffff; /* Neon cyan on hover */
+    box-shadow: 0 15px 25px rgba(0, 255, 255, 0.6); /* Neon cyan glow on hover */
 }
 
 footer {
-    background-color: #4caf50;
+    background-color: #111;
     color: #fff;
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #ff00ff; /* Neon pink */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    transition: color 0.3s ease-in-out;
+}
+
+footer p:hover {
+    color: #00ffff; /* Neon cyan on hover */
+}
+
+/* Optional: Add a smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
 }
