@@ -8,26 +8,31 @@
 /* Basic styling for the entire page */
 body {
     font-family: 'Roboto', sans-serif; /* Modern, clean font */
-    background-color: #121212; /* Dark background for high contrast with neon colors */
+    background: linear-gradient(135deg, #121212, #1a1a1a); /* Dark gradient background */
     color: #e0e0e0; /* Light text color for readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Center the form */
+/* Center the form and apply a dark gradient theme */
 h1 {
     text-align: center;
     margin: 20px 0;
-    color: #00ff00; /* Neon green */
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Neon glow effect */
+    color: #ffffff; /* Light text color */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle shadow for readability */
 }
 
 form {
     max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
-    background-color: #1e1e1e; /* Dark background for the form */
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Dark gradient for the form */
     border-radius: 10px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.6); /* Neon cyan glow */
-    border: 2px solid #00ffff; /* Neon cyan border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    border: 1px solid #333; /* Dark border for a sleek look */
 }
 
 /* Form field styles */
@@ -44,19 +49,19 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 16px;
-    border: 1px solid #333;
+    border: 1px solid #444; /* Darker border for inputs */
     border-radius: 5px;
-    background-color: #1e1e1e; /* Dark background for input fields */
+    background-color: #2a2a2a; /* Slightly lighter dark background for input fields */
     color: #e0e0e0; /* Light text color for input fields */
-    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Neon cyan glow */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for inputs */
     transition: box-shadow 0.3s ease-in-out;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #00ffff; /* Neon cyan border on focus */
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Enhanced neon glow on focus */
+    border-color: #555; /* Darker border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Enhanced shadow on focus */
     outline: none; /* Remove default outline */
 }
 
@@ -64,26 +69,28 @@ textarea {
     resize: vertical;
 }
 
+/* Button styling with dark gradient theme */
 button[type="submit"] {
-    background-color: #ff00ff; /* Neon pink */
+    background: linear-gradient(135deg, #6c63ff, #3a3a3a); /* Subtle gradient */
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 50px; /* Fully rounded button */
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.6); /* Neon pink glow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button[type="submit"]:hover {
-    background-color: #e65c00; /* Neon orange on hover */
-    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.8); /* Enhanced neon pink glow on hover */
+    background: linear-gradient(135deg, #6c63ff, #4a4a4a); /* Slightly different gradient on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
     form {
         max-width: 100%;
+        padding: 15px;
     }
 }

@@ -8,21 +8,24 @@
 /* Basic styling for the entire page */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d; /* Dark background for a futuristic feel */
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Dark gradient for a sleek feel */
     color: #f0f0f0; /* Light text color for contrast */
     line-height: 1.6;
+    padding: 20px;
 }
 
 /* Header styles */
 header {
     padding: 60px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #00c851, #007e33); /* Neon green gradient */
-    color: white;
-    border-bottom: 5px solid #004d40; /* Darker green border */
-    box-shadow: 0 0 20px #00e676; /* Neon glow effect */
-    text-transform: uppercase; /* Futuristic font style */
+    background: linear-gradient(135deg, #2e2e2e, #404040); /* Dark gradient for a modern look */
+    color: #f0f0f0; /* Light text color */
+    border-bottom: 5px solid #333; /* Darker border for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    text-transform: uppercase; /* Modern font style */
     letter-spacing: 3px; /* Spacing out letters */
+    border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 /* Team section styles */
@@ -46,15 +49,17 @@ header {
 }
 
 .card {
-    background: linear-gradient(135deg, #1c1c1c, #333); /* Sleek gradient background */
-    border-radius: 15px; /* More pronounced rounding for a futuristic look */
-    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3); /* Green glow on hover */
-    transition: box-shadow 0.3s ease-in-out;
-    overflow: hidden; /* Ensures smooth edges */
+    background: linear-gradient(135deg, #2a2a2a, #3c3c3c); /* Subtle dark gradient background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden; /* Smooth edges */
+    padding: 20px;
 }
 
 .card:hover {
-    box-shadow: 0 8px 30px rgba(0, 230, 118, 0.6); /* Brighter glow on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Slightly more prominent shadow on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
 }
 
 .container {
@@ -64,7 +69,7 @@ header {
 }
 
 .title {
-    color: #00e676; /* Neon green text */
+    color: #e0e0e0; /* Light text color */
     font-size: 1.2rem;
     margin-bottom: 16px;
     letter-spacing: 2px;
@@ -73,25 +78,25 @@ header {
 
 /* Button styling */
 .button {
-    border: 2px solid #00e676; /* Neon border */
+    border: 2px solid #444; /* Dark border */
     outline: none;
     display: inline-block;
     padding: 12px 24px; /* Larger padding for emphasis */
-    color: #0d0d0d; /* Dark text */
-    background-color: #00e676; /* Neon green background */
+    color: #f0f0f0; /* Light text color */
+    background-color: #444; /* Dark background */
     text-align: center;
     cursor: pointer;
     width: 100%;
-    border-radius: 30px; /* Full rounded corners */
+    border-radius: 30px; /* Fully rounded corners */
     font-size: 1.1rem; /* Slightly larger font size */
     font-weight: bold; /* Bold text */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Neon glow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
 
 .button:hover {
-    background-color: #004d40; /* Darker green on hover */
+    background-color: #555; /* Slightly lighter background on hover */
     transform: scale(1.1); /* Slightly larger on hover */
     color: #f0f0f0; /* Light text color on hover */
-    box-shadow: 0 0 25px rgba(0, 230, 118, 0.8); /* Brighter glow on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* More prominent shadow on hover */
 }
