@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI and Calorie Tracker</title>
+</head>
+<body>
+    <h1>BMI Calculator and Calorie Tracker</h1>
+    <form id="bmi-form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required><br><br>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" required><br><br>
+
+        <button type="submit">Calculate BMI</button>
+    </form>
+
+    <div id="result"></div>
+
+    <h2>Calorie and Nutrient Tracker</h2>
+    <form id="food-form">
+        <label for="food">Enter food consumed (e.g., 2 apples, 1 tuna):</label><br>
+        <textarea id="food" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Track Nutrients</button>
+    </form>
+
+    <div id="calorie-result"></div>
+
+    <script>
+        // Add an event listener to the form to handle BMI calculation
+        document.getElementById('bmi-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting in the default way
+
+            // Get input values
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+
+            // Check if values are valid
+            if (isNaN(weight) || isNaN(height) || height <= 0) {
+                document.getElementById('result').innerHTML = '<p style="color: red;">Please enter valid weight and height.</p>';
+                return;
+            }
+
+            // Calculate BMI
+            const bmi = weight / (height * height);
+
+            // Determine the BMI category
+            let category = '';
+            if (bmi < 18.5) {
+                category = 'Underweight';
+            } else if (bmi < 24.9) {
+                category = 'Normal weight';
+            } else if (bmi < 29.9) {
+                category = 'Overweight';
+            } else {
+                category = 'Obesity';
+            }
+
+            // Display the result
+            document.getElementById('result').innerHTML = `
+                <h2>Your BMI: ${bmi.toFixed(2)}</h2>
+                <p>Category: ${category}</p>
+            `;
+        });
+
+        // Predefined database for foods and their calories and nutrients
+        const foodDatabase = {
+            'apple': { calories: 95, protein: 0.3, carbs: 25, fat: 0.2 },
+            'banana': { calories: 105, protein: 1.3, carbs: 27, fat: 0.3 },
+            'tuna': { calories: 179, protein: 39, carbs: 0, fat: 1.4 },
+            // Add more foods here...
+        };
+
+        // Recommended daily intake (example values)
+        const dailyNeeds = {
+            calories: 2000,
+            protein: 50,
+            carbs: 275,
+            fat: 70
+        };
+
+        // Add event listener to handle food input submission
+        document.getElementById('food-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default submission
+
+            // Get food input
+            const foodInput = document.getElementById('food').value.toLowerCase();
+            const foods = foodInput.split(',').map(item => item.trim());
+
+            // Initialize total intake
+            let totalIntake = {
+                calories: 0,
+                protein: 0,
+                carbs: 0,
+                fat: 0
+            };
+
+            // Loop through each food item
+            foods.forEach(foodItem => {
+                const parts = foodItem.split(' ');
+                const quantity = parseFloat(parts[0]);
+                const foodName = parts.slice(1).join(' ');
+
+                if (foodDatabase[foodName]) {
+                    const foodData = foodDatabase[foodName];
+                    totalIntake.calories += foodData.calories * quantity;
+                    totalIntake.protein += foodData.protein * quantity;
+                    totalIntake.carbs += foodData.carbs * quantity;
+                    totalIntake.fat += foodData.fat * quantity;
+                }
+            });
+
+            // Calculate nutrient deficiencies
+            const lackingNutrients = [];
+            if (totalIntake.calories < dailyNeeds.calories) {
+                lackingNutrients.push(`Calories: ${dailyNeeds.calories - totalIntake.calories} kcal`);
+            }
+            if (totalIntake.protein < dailyNeeds.protein) {
+                lackingNutrients.push(`Protein: ${dailyNeeds.protein - totalIntake.protein} g`);
+            }
+            if (totalIntake.carbs < dailyNeeds.carbs) {
+                lackingNutrients.push(`Carbohydrates: ${dailyNeeds.carbs - totalIntake.carbs} g`);
+            }
+            if (totalIntake.fat < dailyNeeds.fat) {
+                lackingNutrients.push(`Fat: ${dailyNeeds.fat - totalIntake.fat} g`);
+            }
+
+            // Display the calorie and nutrient information
+            document.getElementById('calorie-result').innerHTML = `
+                <h3>Total Intake:</h3>
+                <p>Calories: ${totalIntake.calories} kcal</p>
+                <p>Protein: ${totalIntake.protein} g</p>
+                <p>Carbs: ${totalIntake.carbs} g</p>
+                <p>Fat: ${totalIntake.fat} g</p>
+                <h3>Nutrients You're Lacking:</h3>
+                <p>${lackingNutrients.length > 0 ? lackingNutrients.join('<br>') : 'You have met your nutrient needs!'}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
