@@ -15,6 +15,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="loginBtn">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -27,5 +28,44 @@
     <footer>
         <p>© 2024 Nutrition Hub. All rights reserved.</p>
     </footer>
+
+    <div id="loginPopup" class="popup">
+        <div class="popup-content flip-container" id="flipContainer">
+            <span class="close">×</span>
+    
+            <!-- Flipper: Contains both forms -->
+            <div class="flipper">
+                <!-- Front: Login Form -->
+                <div class="front">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="switchToSignUp">Sign Up</a></p>
+                </div>
+    
+                <!-- Back: Signup Form -->
+                <div class="back">
+                    <h2>Sign Up</h2>
+                    <form id="signUpForm">
+                        <label for="newUsername">Username:</label>
+                        <input type="text" id="newUsername" name="newUsername" required>
+                        <label for="newPassword">Password:</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="scripts/home.js"></script>
 </body>
 </html>
